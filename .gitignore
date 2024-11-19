@@ -1,0 +1,23 @@
+# Ignore node_modules folder
+node_modules/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore build output directories
+/build/
+/dist/
+
+/*.swp
+
+# Ignore specific files in the root directory
+secret.txt
+
+# Ignore all files in the config directory but keep config.json
+config/*
+!config/config.json
+
+
+.env 
+

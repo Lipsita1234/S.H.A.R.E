@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate Food</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="/css/donatePage.css" />
+    <script defer src="/js/donate.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery Validation Plugin -->
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
+  </head>
+  <body class="page-transition">
+    <%- include('../partials/navbar') %>
+
+    <main class="container">
+      <div class="top-space"></div>
+      <!-- Space for navbar -->
+
+      <h1>Donate Food</h1>
+      <div class="form-container">
+        <div class="progress">
+          <div class="progress-steps" id="progressSteps">
+            <div class="step" data-step="1">Choose Food Type</div>
+            <div class="step" data-step="2">Provide Food Details</div>
+            <div class="step" data-step="3">Enter Donor Information</div>
+          </div>
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <form id="donationForm" method="post" action="/submit-donation">
+          <!-- Step 1: Choose Food Type -->
+
+          <!-- Step 1: Choose Food Type -->
+          <div class="form-step" id="step1">
+            <div class="card">
+              <h2>Step 1: Choose Food Type</h2>
+              <div class="food-options">
+                <label class="food-option one">
+                  <input type="radio" name="foodType" value="raw" required />
+                  <div class="food-image" id="rawFoodImage"></div>
+                  <span>Raw Food</span>
+                </label>
+                <label class="food-option two">
+                  <input type="radio" name="foodType" value="cooked" />
+                  <div class="food-image" id="cookedFoodImage"></div>
+                  <span>Cooked Food</span>
+                </label>
+                <label class="food-option three">
+                  <input type="radio" name="foodType" value="packed" />
+                  <div class="food-image" id="packedFoodImage"></div>
+                  <span>Packed Food</span>
+                </label>
+              </div>
+            </div>
+            <button type="button" class="next-btn" onclick="nextStep()">
+              Next
+            </button>
+          </div>
+
+          <!-- Step 2: Provide Food Details -->
+          <div class="form-step" id="step2">
+            <!-- Raw Food Details -->
+            <div class="card" id="rawFoodDetails" style="display: none">
+              <h2>Raw Food Details</h2>
+              <label for="rawFoodType">Type of Raw Food:</label>
+              <input
+                type="text"
+                id="rawFoodType"
+                name="rawFoodType"
+                placeholder="e.g., Vegetables"
+                required
+              />
+
+              <label for="rawFoodAmount">Amount:</label>
+              <input
+                type="text"
+                id="rawFoodAmount"
+                name="rawFoodAmount"
+                placeholder="e.g., 5 kg"
+                required
+              />
+
+              <label for="rawFoodStorage">Storage Conditions:</label>
+              <textarea
+                id="rawFoodStorage"
+                name="rawFoodStorage"
+                placeholder="e.g., Keep refrigerated"
+              ></textarea>
+
+              <label for="rawFoodHarvestDate">Harvest Date:</label>
+              <input
+                type="date"
+                id="rawFoodHarvestDate"
+                name="rawFoodHarvestDate"
+                required
+              />
+            </div>
+
+            <!-- Cooked Food Details -->
+            <div class="card" id="cookedFoodDetails" style="display: none">
+              <h2>Cooked Food Details</h2>
+              <label for="cookedFoodType">Type of Cooked Food:</label>
+              <input
+                type="text"
+                id="cookedFoodType"
+                name="cookedFoodType"
+                placeholder="e.g., Pasta"
+                required
+              />
+
+              <label for="cookedFoodAmount">Amount:</label>
+              <input
+                type="text"
+                id="cookedFoodAmount"
+                name="cookedFoodAmount"
+                placeholder="e.g., 3 trays"
+                required
+              />
+
+              <label for="cookedFoodStorage">Storage Conditions:</label>
+              <textarea
+                id="cookedFoodStorage"
+                name="cookedFoodStorage"
+                placeholder="e.g., Keep warm"
+                required
+              ></textarea>
+
+              <label for="cookedFoodExpiry">Expiry Date:</label>
+              <input
+                type="date"
+                id="cookedFoodExpiry"
+                name="cookedFoodExpiry"
+                required
+              />
+
+              <label for="cookedFoodIngredients">Main Ingredients:</label>
+              <textarea
+                id="cookedFoodIngredients"
+                name="cookedFoodIngredients"
+                placeholder="e.g., Pasta, Tomato Sauce"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Packed Food Details -->
+            <div class="card" id="packedFoodDetails" style="display: none">
+              <h2>Packed Food Details</h2>
+              <label for="packedFoodType">Type of Packed Food:</label>
+              <input
+                type="text"
+                id="packedFoodType"
+                name="packedFoodType"
+                placeholder="e.g., Biscuits"
+                required
+              />
+
+              <label for="packedFoodAmount">Amount:</label>
+              <input
+                type="text"
+                id="packedFoodAmount"
+                name="packedFoodAmount"
+                placeholder="e.g., 10 packets"
+                required
+              />
+
+              <label for="packedFoodExpiry">Expiry Date:</label>
+              <input
+                type="date"
+                id="packedFoodExpiry"
+                name="packedFoodExpiry"
+                required
+              />
+
+              <label for="packedFoodIngredients">Ingredients:</label>
+              <textarea
+                id="packedFoodIngredients"
+                name="packedFoodIngredients"
+                placeholder="e.g., Wheat, Sugar"
+                required
+              ></textarea>
+
+              <label for="packedFoodBrand">Brand:</label>
+              <input
+                type="text"
+                id="packedFoodBrand"
+                name="packedFoodBrand"
+                placeholder="e.g., Oreo"
+                required
+              />
+            </div>
+
+            <button type="button" class="prev-btn">Previous</button>
+            <button type="button" class="next-btn">Next</button>
+          </div>
+
+          <!-- Step 3: Enter Donor Information -->
+          <div class="form-step" id="step3">
+            <div class="card">
+              <h2>Donor Information</h2>
+              <label for="donorName">Name:</label>
+              <input type="text" id="donorName" name="donorName" required />
+              <label for="donorContact">Contact Number:</label>
+              <input
+                type="tel"
+                id="donorContact"
+                name="donorContact"
+                required
+              />
+              <label for="donorAddress">Address:</label>
+              <textarea
+                id="donorAddress"
+                name="donorAddress"
+                required
+              ></textarea>
+            </div>
+            <button type="button" class="prev-btn" onclick="prevStep()">
+              Previous
+            </button>
+            <button type="submit" class="submit-btn">Submit</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+    <script src="js/basic.js"></script>
+  </body>
+</html>

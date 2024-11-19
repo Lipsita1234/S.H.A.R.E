@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body class="page-transition">
+    <!-- Include Navbar Partial -->
+    <%- include('../partials/navbar.ejs') %>
+    
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="images/MAN1.jpeg"  alt="User Avatar" class="profile-avatar">
+            <h1 class="profile-name">John Doe</h1>
+            <p class="profile-email">johndoe@example.com</p>
+        </div>
+        <div class="profile-extra">
+            <div class="profile-section">
+                <h2>Achievements</h2>
+                <ul class="achievement-list">
+                    <li> Top Donor of the Month - June 2023</li>
+                    <li> 100+ Meals Donated</li>
+                    <li> Volunteer of the Year 2023</li>
+                </ul>
+            </div>
+            <div class="profile-section">
+                <h2>Volunteer Hours</h2>
+                <p> &#128337; 120 hours</p>
+            </div>
+        </div>
+        
+        <div class="profile-donations">
+            <h2>Previous Donations</h2>
+            <ul class="donation-list">
+                <li class="donation-item">
+                    <p><strong>Donation 1:</strong> 50 packed meals</p>
+                    <p><strong>Date:</strong> 2023-07-01</p>
+                </li>
+                <li class="donation-item">
+                    <p><strong>Donation 2:</strong> 20 kg of raw rice</p>
+                    <p><strong>Date:</strong> 2023-06-15</p>
+                </li>
+                <li class="donation-item">
+                    <p><strong>Donation 3:</strong> 100 bottled waters</p>
+                    <p><strong>Date:</strong> 2023-05-10</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Include Footer Partial -->
+    <%- include('../partials/footer.ejs') %>
+    <script src="js/basic.js"></script>
+</body>
+</html>

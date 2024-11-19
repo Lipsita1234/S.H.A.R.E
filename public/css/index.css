@@ -1,0 +1,514 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+/*Google fonts imported */ 
+/* Whoever edits this should be careful not to use same class or id names which are already in use */
+/* PLEASE ALWAYS ADD CODE COMMENTS . THIS HELPS OTHER MEMBERS UNDERSTAND THE CODE. */
+
+:root {
+  --primary-color: #ff742e;
+  --secondary-color: #008080;
+  --accent-color: #8facd8;
+  --text-color: #fff;
+  --background-color: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("../images/IMAGE3.jpeg") no-repeat center center;
+  background-size: cover;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: var(--background-color);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-text {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 24px;
+}
+
+.cta-buttons {
+  margin-top: 20px;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 15px 25px;
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin: 10px;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.btn-secondary {
+  background: var(--text-color);
+  color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+.form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.form {
+  background: var(--background-color);
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.form h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.form input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background: transparent;
+  color: var(--text-color);
+}
+
+.form button {
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+
+.btn-google {
+  background: var(--secondary-color);
+  color: var(--text-color);
+  margin: 10px;
+}
+
+.btn-google:hover {
+  background: var(--primary-color);
+}
+
+/* Responsive styles */
+
+
+
+@media (max-width: 768px) {
+  /* Make the hero section flexible and centered on smaller screens */
+  .hero {
+    height: auto; /* Adjust height to fit content */
+    padding: 0px; /* Add padding for better spacing */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    padding: 0px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Adjust form section to appear below hero content on smaller screens */
+  .form-section {
+    margin-top: 20px; /* Reduce space between hero content and form */
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  
+}
+
+/* How It Works Section */
+.how-it-works {
+  min-height: 100vh; /* Full viewport height */
+  background: #f4f4f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 50px 0;
+}
+
+.how-it-works .container {
+  text-align: center;
+  padding-top: 60px; /* Additional padding to prevent overlap */
+}
+
+.section-heading h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  animation: fadeIn 1s ease-out;
+}
+
+.section-heading p {
+  font-size: 1.2rem;
+  color: #333;
+  animation: fadeIn 1s ease-out 0.5s;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Ensures all cards are of equal height */
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.card .icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.card .content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.card .content p {
+  font-size: 1rem;
+  color: #666;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .section-heading h2 {
+    font-size: 2.5rem;
+  }
+  .section-heading p {
+    font-size: 1rem;
+  }
+  .cards-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .how-it-works .container {
+    padding-top: 80px; /* Adjust padding for mobile screens */
+  }
+}
+
+/*
+*
+*
+*
+*
+* CSS FOR DATA SECTION 
+*
+*
+*
+*/
+.data-section {
+  height: 100vh;
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  padding: 50px auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.data-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 5rem 0 1.5rem 0;
+  color: var(--primary-color);
+
+  span {
+    color: var(--secondary-color);
+  }
+}
+
+.slider {
+  width: 100%; /* Full width of the viewport */
+  max-width: 1000px; /* Maximum width for large screens */
+  height: 60vh; /* Adjust height based on design needs */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  background: #fff; /* White background for the slider */
+  padding: 0; /* Remove any extra padding */
+  margin: 0; /* Remove margin to utilize full width */
+}
+
+.slide {
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transition: transform 0.1s linear;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px; /* Rounded corners */
+  filter: brightness(80%); /* Slightly dim the image */
+  transition: filter 0.3s ease-in-out;
+}
+
+.slide img:hover {
+  filter: brightness(100%); /* Brighten on hover */
+}
+
+.text-overlay {
+  position: absolute;
+  bottom: 20px; /* Distance from the bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  background: rgba(0, 0, 0, 0.4); /* Darker background */
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 90%; /* Ensure it doesn't overflow */
+  box-sizing: border-box;
+  z-index: 10; /* Ensure it is above the image */
+  text-align: center;
+  backdrop-filter: blur(3px); /* Blur background for better text visibility */
+}
+
+.text-overlay h3,
+.text-overlay p {
+  margin: 0; /* Remove margin */
+  width: 100%; /* Ensure text uses full width */
+}
+
+.text-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.text-overlay p {
+  font-size: 1rem;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.prev-btn,
+.next-btn {
+  background: rgb(0, 128, 128, 0.6);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  margin: auto 3%;
+  font-size: 2rem; /* Larger size for better visibility */
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow */
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background: rgb(0, 128, 128, 0.9);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* More pronounced shadow */
+}
+
+@media (max-width: 1010px) {
+    .slide img {
+        padding : 1% ;
+    }
+}
+
+@media (max-width: 768px) {
+  .data-section h2 {
+    font-size: 2rem;
+  }
+
+  .slider {
+    height: 50vh; /* Adjust for smaller screens */
+  }
+  .slide img {
+    padding : 1% ;
+}
+
+  .text-overlay {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    padding: 0.8rem;
+    max-width: 95%; /* Ensure it doesn't overflow on smaller screens */
+    text-align: center;
+  }
+
+  .text-overlay h3 {
+    font-size: 1.2rem;
+  }
+
+  .text-overlay p {
+    font-size: 0.9rem;
+  }
+
+  .slider-controls {
+    position: static; /* Move controls below the image */
+    margin-top: 3rem; /* Space above controls */
+    justify-content: center; /* Center controls horizontally */
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    height: 40vh; /* Adjust for very small screens */
+  }
+  .slide img {
+    padding : 5% ;
+}
+
+  .text-overlay {
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    padding: 0.6rem;
+    max-width: 95%; /* Ensure it doesn't overflow on smaller screens */
+    text-align: center;
+  }
+
+  .text-overlay h3 {
+    font-size: 1rem;
+  }
+
+  .text-overlay p {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 320px) {
+    .slide img {
+        padding : 6% ;
+    }
+}
+/* Adding the styling for highlighting the nav link corresponding to that page */
+
+.nav-links a.active{
+  border-bottom: 3px solid whitesmoke;
+
+}

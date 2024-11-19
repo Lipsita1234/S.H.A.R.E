@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Donation Hero Page</title>
+    <!-- Correct path to your CSS file -->
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/basic.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+
+            menuToggle.addEventListener('click', () => {
+                console.log('menu toggle clicked');
+                mobileMenu.classList.toggle('open');
+            });
+        });
+    </script> -->
+  </head>
+  <body class="page-transition">
+    <!-- navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="/"> <span>SHARE</span></a>
+      </div>
+      <div class="nav-links">
+        <a href="/#hero" onclick="navigateToNewPage('/#hero'); return false;"
+          >Home</a
+        >
+        <a
+          href="/#data-section"
+          onclick="navigateToNewPage('/#data-section'); return false;"
+          >Info</a
+        >
+        <a href="/donate" onclick="navigateToNewPage('/donate'); return false;"
+          >Donate</a
+        >
+        <a href="/about" onclick="navigateToNewPage('/about'); return false;"
+          >About</a
+        >
+        <div class="uaLinks">
+          <a
+            href="/profile"
+            onclick="navigateToNewPage('/profile'); return false;"
+            >Profile</a
+          >
+          <a
+            href="/contact"
+            onclick="navigateToNewPage('/contact'); return false;"
+            >Contact</a
+          >
+        </div>
+      </div>
+
+      <!-- <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+        <button type="button">Search</button>
+      </div> -->
+      <div class="user-actions">
+        <a
+          href="/profile"
+          onclick="navigateToNewPage('/profile'); return false;"
+          >Profile</a
+        >
+        <a
+          href="/contact"
+          onclick="navigateToNewPage('/contact'); return false;"
+          >Contact</a
+        >
+      </div>
+      <button
+        class="volunteer-button"
+        onclick="navigateToNewPage('/volunteer'); return false;"
+      >
+        Volunteer
+      </button>
+
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        &#9776;
+      </button>
+      <!-- Mobile menu items are hidden on large screens -->
+      <div class="mobile-menu">
+        <a
+          class="menu-link"
+          href="/#hero"
+          onclick="navigateToNewPage('/#hero'); return false;"
+          >Home</a
+        >
+        <a
+          class="menu-link"
+          href="/#how-it-works"
+          onclick="navigateToNewPage('/#how-it-works'); return false;"
+          >How It Works</a
+        >
+        <a
+          class="menu-link"
+          href="/#data-section"
+          onclick="navigateToNewPage('/#data-section'); return false;"
+          >Logout</a
+        >
+        <a
+          class="menu-link"
+          href="/about"
+          onclick="navigateToNewPage('/about'); return false;"
+          >About</a
+        >
+        <a
+          class="menu-link"
+          href="/donate"
+          onclick="navigateToNewPage('/donate'); return false;"
+          >Donate</a
+        >
+        <a
+          class="menu-link"
+          href="/contact"
+          onclick="navigateToNewPage('/contact'); return false;"
+          >Contact</a
+        >
+        <a
+          class="menu-link"
+          href="/profile"
+          onclick="navigateToNewPage('/profile'); return false;"
+          >Profile</a
+        >
+        <a
+          class="menu-link"
+          href="/volunteer"
+          onclick="navigateToNewPage('/volunteer'); return false;"
+          >Volunteer</a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Serving Hope And Resources Everywhere</h1>
+            <p>Together, We Can Make a Difference</p>
+            <div class="cta-buttons">
+              <a
+                href="/donate"
+                class="btn-primary"
+                onclick="navigateToNewPage('/donate'); return false;"
+                >Donate Now</a
+              >
+              <a
+                href="/#data-section"
+                class="btn-secondary"
+                onclick="navigateToNewPage('/#data-section'); return false;"
+                >Learn More</a
+              >
+            </div>
+          </div>
+          <div class="form-section">
+            <div class="form">
+              <h2>Sign Up for Updates</h2>
+              <form action="#" method="post">
+                <div class="input-container">
+                  <label for="name">Username</label>
+                  <input type="text" name="name" class="input" />
+
+                  <!-- <span>Username</span> -->
+                </div>
+                <div class="input-container">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" class="input" />
+
+                  <!-- <span>Email</span> -->
+                </div>
+                <button type="submit" class="btn-primary">Sign Up</button>
+                <button type="button" class="btn-google">
+                  Sign Up with Google
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+      HOW 
+           IT 
+                WORKS 
+                      SECTION 
+                            -->
+
+    <section id="how-it-works" class="how-it-works">
+      <div class="container">
+        <div class="section-heading">
+          <h2>How It Works</h2>
+          <p>
+            Discover how our platform helps to connect those in need with food
+            donors.
+          </p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card">
+            <div class="icon">
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <div class="content">
+              <h3>Step 1: Sign Up</h3>
+              <p>
+                Register to join our community and start contributing to a
+                better world.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="icon">
+              <i class="fas fa-box"></i>
+            </div>
+            <div class="content">
+              <h3>Step 2: Donate</h3>
+              <p>
+                Submit your food donation details through our easy-to-use
+                platform.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="icon">
+              <i class="fas fa-truck"></i>
+            </div>
+            <div class="content">
+              <h3>Step 3: Delivery</h3>
+              <p>
+                Our team will arrange the delivery of food to those in need.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="content">
+              <h3>Step 4: Community</h3>
+              <p>
+                Join our community events and see the impact of your
+                contributions.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="content">
+              <h3>Step 5: Make a Difference</h3>
+              <p>
+                Witness the difference your donations make in people's lives.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATA SECTION  -->
+
+    <section id="data-section" class="data-section">
+      <h2>You <span>SHOULD</span> Know</h2>
+      <div class="slider">
+        <div class="slide">
+          <img
+            src="images/Hunger-Crisis-image.avif"
+            alt="Hunger-Crisis-Image"
+          />
+          <div class="text-overlay">
+            <h3>Hunger Crisis</h3>
+            <p>
+              Over 800 million people suffer from hunger worldwide. Your
+              contributions can help bridge the gap between surplus and need.
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/malnutrition.jpg" alt="Children malnourished" />
+          <div class="text-overlay">
+            <h3>Child Malnutrition</h3>
+            <p>
+              Approximately 150 million children under five are malnourished.
+              Every meal counts towards improving their health and future.
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/Food-wastage.jpeg" alt="Food-wastage" />
+          <div class="text-overlay">
+            <h3>Food Waste</h3>
+            <p>
+              Every year, billions of tons of food are wasted globally. Reducing
+              food waste can significantly alleviate hunger and lower
+              environmental impact.
+            </p>
+          </div>
+        </div>
+        <!-- Add more slides as needed -->
+      </div>
+      <div class="slider-controls">
+        <button class="prev-btn">&lt;</button>
+        <button class="next-btn">&gt;</button>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION  -->
+
+    <section id="contact" class="contact"></section>
+
+    <!-- FOOTER SECTION  -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h1>S.H.A.R.E.</h1>
+          <p>
+            Share Hope And Resources Everywhere. We are dedicated to combating
+            food waste and alleviating hunger through community-driven
+            initiatives and innovative solutions.
+          </p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-section">
+            <h3>Company</h3>
+            <a
+              href="/about"
+              onclick="navigateToNewPage('/about'); return false;"
+              >About Us</a
+            >
+            <a
+              href="/careers"
+              onclick="navigateToNewPage('/careers'); return false;"
+              >Careers</a
+            >
+            <a href="/team" onclick="navigateToNewPage('/team'); return false;"
+              >Our Team</a
+            >
+            <a
+              href="/contact"
+              onclick="navigateToNewPage('/contact'); return false;"
+              >Contact</a
+            >
+          </div>
+          <div class="footer-section">
+            <h3>Services</h3>
+            <a
+              href="/donate"
+              onclick="navigateToNewPage('/donate'); return false;"
+              >Donate</a
+            >
+            <a
+              href="/volunteer"
+              onclick="navigateToNewPage('/volunteer'); return false;"
+              >Volunteer</a
+            >
+            <a
+              href="/events"
+              onclick="navigateToNewPage('/events'); return false;"
+              >Events</a
+            >
+            <a
+              href="/partnerships"
+              onclick="navigateToNewPage('/partnerships'); return false;"
+              >Partnerships</a
+            >
+          </div>
+          <div class="footer-section">
+            <h3>Support</h3>
+            <a
+              href="faq"
+              onclick="navigateToNewPage('/faq'); return false;"
+              >FAQ</a
+            >
+            <a
+              href="/privacy"
+              onclick="navigateToNewPage('/privacy'); return false;"
+              >Privacy Policy</a
+            >
+            <a
+              href="/terms"
+              onclick="navigateToNewPage('/terms'); return false;"
+              >Terms of Service</a
+            >
+            <a
+              href="/report"
+              onclick="navigateToNewPage('/report'); return false;"
+              >Report a Problem</a
+            >
+          </div>
+
+          <div class="footer-section footer-icons">
+            <h3>Follow Us</h3>
+            <div class="footer-icon-links">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 S.H.A.R.E. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT CODE HERE -->
+    <script src="js/index.js"></script>
+    <script src="js/basic.js"></script>
+  </body>
+</html>

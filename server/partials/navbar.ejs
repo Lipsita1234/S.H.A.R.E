@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/navbar.css" />
+    <style>
+      /* .active{
+        border-bottom: 3px solid whitesmoke;
+      } */
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Toggle Menu
+        const menuToggle = document.querySelector(".menu-toggle");
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const menuLinks = document.querySelectorAll(".menu-link");
+
+        menuToggle.addEventListener("click", () => {
+            console.log("menu toggle clicked");
+          mobileMenu.classList.toggle("open");
+        });
+
+        menuLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            console.log("menu link clicked");
+            mobileMenu.classList.remove("open");
+          });
+        });
+      });
+    </script>
+  </head>
+  <body class="page-transition">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="/"> <span>SHARE</span></a>
+      </div>
+      <div class="nav-links">
+        <a href="/#hero" onclick="navigateToNewPage('/#hero'); return false;">Home</a>
+        <a href="/#data-section" onclick="navigateToNewPage('/#data-section'); return false;">Info</a>
+        <a href="/donate" onclick="navigateToNewPage('/donate'); return false;">Donate</a>
+        <a href="/about" onclick="navigateToNewPage('/about'); return false;">About</a>
+        <div class="uaLinks">
+            <a href="/profile" onclick="navigateToNewPage('/profile'); return false;">Profile</a>
+            <a href="/contact" onclick="navigateToNewPage('/contact'); return false;">Contact</a>
+        </div>
+    </div>
+    
+      <!-- <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+        <button type="button">Search</button>
+      </div> -->
+      <div class="user-actions">
+        <a href="/profile" onclick="navigateToNewPage('/profile'); return false;">Profile</a>
+        <a href="/contact" onclick="navigateToNewPage('/contact'); return false;">Contact</a>
+    </div>
+    <button class="volunteer-button" onclick="navigateToNewPage('/volunteer'); return false;">
+        Volunteer
+    </button>
+    
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        &#9776;
+      </button>
+      <!-- Mobile menu items are hidden on large screens -->
+      <div class="mobile-menu">
+        <a class="menu-link" href="/#hero" onclick="navigateToNewPage('/#hero'); return false;">Home</a>
+        <a class="menu-link" href="/#how-it-works" onclick="navigateToNewPage('/#how-it-works'); return false;">How It Works</a>
+        <a class="menu-link" href="/#data-section" onclick="navigateToNewPage('/#data-section'); return false;">Logout</a>
+        <a class="menu-link" href="/about" onclick="navigateToNewPage('/about'); return false;">About</a>
+        <a class="menu-link" href="/donate" onclick="navigateToNewPage('/donate'); return false;">Donate</a>
+        <a class="menu-link" href="/contact" onclick="navigateToNewPage('/contact'); return false;">Contact</a>
+        <a class="menu-link" href="/profile" onclick="navigateToNewPage('/profile'); return false;">Profile</a>
+        <a class="menu-link" href="/volunteer" onclick="navigateToNewPage('/volunteer'); return false;">Volunteer</a>
+    </div>
+    
+    </nav>
+    <script>
+      //adding the script for highlighting navbar links
+      // Get the current page URL
+      var currentPage = window.location.pathname;
+      console.log(currentPage);
+      // Select all navbar links
+      var navLinks = document.querySelectorAll("nav div a");
+
+      // Loop through links to find the matching link
+      navLinks.forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+      });
+</script>
+<script src="js/basic.js"></script>
+  </body>
+
+</html>

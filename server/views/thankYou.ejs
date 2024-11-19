@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Donation</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="/css/thankYou.css">
+</head>
+<body class="page-transition">
+
+    <%- include('../partials/navbar.ejs') %>
+    <main>
+    <div class="thank-you-container">
+        <div class="checkmark-wrapper">
+            <svg id="tick-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" fill="#3deb43"/>
+            </svg>
+        </div>
+        <div class="thank-you-card">
+            <h1>Thank You!</h1>
+            <p>We appreciate your generous donation. Here are the details of your donation:</p>
+            <div class="donation-summary">
+                <ul id="donationDetailsList">
+                    <% for (let key in donationDetails) { %>
+                        <% if (donationDetails[key]) { %>
+                            <li><strong><%= key %>:</strong> <%= donationDetails[key] %></li>
+                        <% } %>
+                    <% } %>
+                </ul>
+            </div>
+            
+            <p>We will be in touch soon with more details. If you have any questions, feel free to <a href="/contact">contact us</a>.</p>
+        </div>
+    </div>
+</main>
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+
+    <!-- <script>
+
+        async function getDonationDetails() {
+        const donationDetailsString = localStorage.getItem('donationDetails');
+        return JSON.parse(donationDetailsString) || {};
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+            // Retrieve donation details from localStorage
+            const donationDetails = await getDonationDetails();
+            
+            // Log the retrieved donation details
+            console.log('Donation Details:', donationDetails);
+
+            // ... rest of your code ...
+
+        } catch (error) {
+            console.error('Error retrieving donation details:', error);
+        }
+            
+            // Log the retrieved donation details
+            // console.log('Donation Details:', donationDetails);
+    
+            // Update the donation details list
+            const donationDetailsList = document.getElementById('donationDetailsList');
+    
+            // Generate HTML for the donation details
+            // const detailsHtml = `
+            //     <li><strong>Type of Food:</strong> ${ donationDetails.foodType || 'N/A'}</li>
+            //     <li><strong>Amount:</strong> ${donationDetails.amount || 'N/A'}</li>
+            //     ${donationDetails.foodType === 'raw' ? `
+            //         <li><strong>Storage Conditions:</strong> ${donationDetails.storage || 'N/A'}</li>
+            //         <li><strong>Harvest Date:</strong> ${donationDetails.harvestDate || 'N/A'}</li>
+            //     ` : ''}
+            //     ${donationDetails.foodType === 'cooked' ? `
+            //         <li><strong>Storage Conditions:</strong> ${donationDetails.storage || 'N/A'}</li>
+            //         <li><strong>Expiry Date:</strong> ${donationDetails.expiry || 'N/A'}</li>
+            //         <li><strong>Main Ingredients:</strong> ${donationDetails.ingredients || 'N/A'}</li>
+            //     ` : ''}
+            //     ${donationDetails.foodType === 'packed' ? `
+            //         <li><strong>Expiry Date:</strong> ${donationDetails.expiry || 'N/A'}</li>
+            //         <li><strong>Ingredients:</strong> ${donationDetails.ingredients || 'N/A'}</li>
+            //         <li><strong>Brand:</strong> ${donationDetails.brand || 'N/A'}</li>
+            //     ` : ''}
+            // `;
+    
+            // Update the DOM with the generated HTML
+            // donationDetailsList.innerHTML = detailsHtml;
+        });
+
+        
+    </script> -->
+    <script src="js/basic.js"></script>
+</body>
+</html>

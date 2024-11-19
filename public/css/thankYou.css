@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('/css/basic.css');
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    margin-top: 5rem;
+    flex: 1; /* Allows the main content to grow and take up available space */
+}
+
+.thank-you-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 15px; /* Add side margins for smaller screens */
+    box-sizing: border-box; /* Ensure padding does not affect the width */
+}
+
+.checkmark-wrapper {
+    margin: 20px 0;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkmark-wrapper svg {
+    width: 100%;
+    height: 100%;
+    animation: rotate-tick 0.5s ease-in-out;
+}
+
+@keyframes rotate-tick {
+    0% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+.thank-you-card {
+    background: linear-gradient(135deg, #4d9f8c 0%, #30cfd0 100%);
+    border-radius: 15px;
+    padding: 20px 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Center the card horizontally */
+    box-sizing: border-box; /* Ensure padding does not affect the width */
+}
+
+.thank-you-card h1 {
+    margin-top: 0;
+    font-size: 2.5em;
+}
+
+.thank-you-card p {
+    font-size: 1.2em;
+}
+
+.donation-summary {
+    margin: 20px 0;
+}
+
+.donation-summary ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.donation-summary li {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease;
+}
+
+.donation-summary li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+a {
+    color: #ffe600;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles */
+footer {
+    margin-top: 5rem;
+    background-color: #333; /* Dark background color for the footer */
+    color: #fff; /* White text color for contrast */
+    padding: 20px; /* Add some padding */
+    text-align: center; /* Center the text */
+    width: 100%; /* Full width of the page */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for visual separation */
+    box-sizing: border-box; /* Ensure padding does not affect the width */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .thank-you-card {
+        padding: 20px 30px;
+    }
+
+    .thank-you-card h1 {
+        font-size: 2.2em;
+    }
+
+    .thank-you-card p {
+        font-size: 1.1em;
+    }
+
+    .checkmark-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .thank-you-card {
+        padding: 15px 25px;
+    }
+
+    .thank-you-card h1 {
+        font-size: 2em;
+    }
+
+    .thank-you-card p {
+        font-size: 1em;
+    }
+
+    .checkmark-wrapper {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 480px) {
+    .thank-you-card {
+        padding: 10px 20px;
+    }
+
+    .thank-you-card h1 {
+        font-size: 1.5em;
+    }
+
+    .thank-you-card p {
+        font-size: 0.9em;
+    }
+
+    .checkmark-wrapper {
+        width: 80px;
+        height: 80px;
+    }
+}
